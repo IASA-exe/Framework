@@ -23,32 +23,32 @@ namespace Photo_Retouch.UWP
             scanf("%d %d %d %d", &f1a, &f1b, &f2a, &f2b);
             scanf("%d %d %d %d", &s1a, &s1b, &s2a, &s2b);
 
-            color temp[1010][1010] = {0};
+            color temp[1010 , 1010] = {0};
     for(k=f1a;k<f2a;k++)
     {
         for(l=f1b;l<f2b;l++)
         {
-            temp[k][l].b = InArr[k] [l].b;
-            temp[k][l].g = InArr[k] [l].g;
-            temp[k][l].r = InArr[k] [l].r;
+            temp[k,l].b = InArr[k,l].b;
+            temp[k,l].g = InArr[k,l].g;
+            temp[k,l].r = InArr[k,l].r;
         }
 }
     for(k=s1a;k<s2a;k++)
     {
         for(l=s1b;l<s2b;l++)
         {
-            InArr[k-s1a+f1a] [l-s1b+f1b].b = InArr[k] [l].b;
-            InArr[k-s1a+f1a] [l-s1b+f1b].g = InArr[k] [l].g;
-            InArr[k-s1a+f1a] [l-s1b+f1b].r = InArr[k] [l].r;
+            InArr[k-s1a+f1a, l-s1b+f1b].b = InArr[k,l].b;
+            InArr[k-s1a+f1a, l-s1b+f1b].g = InArr[k,l].g;
+            InArr[k-s1a+f1a, l-s1b+f1b].r = InArr[k,l].r;
         }
     }
     for(k=f1a;k<f2a;k++)
     {
         for(l=f1b;l<f2b;l++)
         {
-            InArr[k-f1a+s1a] [l-f1b+s1b].b = temp[k][l].b;
-            InArr[k-f1a+s1a] [l-f1b+s1b].b = temp[k][l].b;
-            InArr[k-f1a+s1a] [l-f1b+s1b].b = temp[k][l].b;
+            InArr[k-f1a+s1a, l-f1b+s1b].b = temp[k,l].b;
+            InArr[k-f1a+s1a, l-f1b+s1b].b = temp[k,l].b;
+            InArr[k-f1a+s1a, l-f1b+s1b].b = temp[k,l].b;
         }
     }
             for (int i = 0; i < row; i++)
