@@ -1,11 +1,11 @@
 #include<stdio.h>
 FILE*fin=fopen("input.txt", "rb");
 FILE*fout=fopen("output.bmp", "wb");
-struct color
+struct Pixel
 {
-    int b,r,g;
+    int b,r,g,a;
 };
-color in[1010][1010];
+Pixel InArr[1010][1010];
 int n,m,b[1010][1010],g[1010][1010],r[1010][1010];
 int main()
 {
@@ -19,9 +19,9 @@ int main()
     {
         for(j=1;j<=m;j++)
         {
-            in[i][j].b=getc(fin);
-            in[i][j].g=getc(fin);
-            in[i][j].r=getc(fin);
+            InArr[i][j].b=getc(fin);
+            InArr[i][j].g=getc(fin);
+            InArr[i][j].r=getc(fin);
         }
     }//don't touch!
     //put your code
@@ -29,9 +29,9 @@ int main()
     {
         for(j=1;j<=m;j++)
         {
-            putc(in[i][j].b,fout);
-            putc(in[i][j].g,fout);
-            putc(in[i][j].r,fout);
+            putc(InArr[i][j].b,fout);
+            putc(InArr[i][j].g,fout);
+            putc(InArr[i][j].r,fout);
         }
     }
     return 0;
